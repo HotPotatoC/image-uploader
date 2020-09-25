@@ -10,11 +10,7 @@ export interface RootState {
 
 export const store = createStore<RootState>({
   state: {
-    image: {
-      fileName: 'ac73302fe56e086405681961-1600962210951.jpg',
-      url:
-        'http://image-uploader-fdcaf9f0e.herokuapp.com/uploads/ac73302fe56e086405681961-1600962210951.jpg'
-    }
+    image: null
   },
   mutations: {
     SET_IMAGE: (state, payload) => (state.image = payload)
