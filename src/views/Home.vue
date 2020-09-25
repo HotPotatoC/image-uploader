@@ -135,11 +135,7 @@ export default defineComponent({
       try {
         image.isUploading = true
 
-        const { data, status } = await axios.post('/upload', formData, {
-          onUploadProgress(progress) {
-            console.log(progress)
-          }
-        })
+        const { data, status } = await axios.post('/upload', formData)
 
         if (status === 200) {
           image.isUploading = false
