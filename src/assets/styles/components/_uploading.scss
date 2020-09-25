@@ -1,0 +1,59 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.uploading {
+  animation: fadeDown 2s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 320px;
+  background-color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 2em 2em;
+  width: 320px;
+
+  @include respond('md') {
+    width: 480px;
+  }
+
+  h1 {
+    color: $gray2;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.035em;
+    margin-bottom: 1.5em;
+
+    @include respond('md') {
+      font-size: 24px;
+    }
+  }
+
+  .progress-bar {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: $gray6;
+    border-radius: 8px;
+    padding: 4px;
+    &__inner {
+      animation: loading 2.5s infinite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 75%;
+      background-color: $blue1;
+      border-radius: 8px;
+      padding: 4px;
+    }
+  }
+}
+
+@include keyframes(loading) {
+  from {
+    left: -400px;
+  }
+  to {
+    left: 600px;
+  }
+}
